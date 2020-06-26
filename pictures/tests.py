@@ -5,7 +5,7 @@ from .models import Image, Category, Location
 
 class TestImage(TestCase):
     def setUp(self):
-        self.location = Location(name='Moringa')
+        self.location = Location(name='Kitengela')
         self.location.save_location()
 
         self.category = Category(name='home')
@@ -40,7 +40,7 @@ class TestImage(TestCase):
 
     def test_search_image_by_location(self):
         self.image_test.save_image()
-        found_images = self.image_test.filter_by_location(location='moringa')
+        found_images = self.image_test.filter_by_location(location='kitengela')
         self.assertTrue(len(found_images) == 1)
 
     def test_search_image_by_category(self):
@@ -56,7 +56,7 @@ class TestImage(TestCase):
 
 class TestLocation(TestCase):
     def setUp(self):
-        self.location = Location(name='Moringa')
+        self.location = Location(name='Kitengela')
         self.location.save_location()
 
     def test_instance(self):
@@ -73,9 +73,9 @@ class TestLocation(TestCase):
         self.assertTrue(len(locations) > 1)
 
     def test_update_location(self):
-        new_location = 'kericho'
+        new_location = 'kisumu'
         self.location.update_location(self.location.id, new_location)
-        changed_location = Location.objects.filter(name='kericho')
+        changed_location = Location.objects.filter(name='kisumu')
         self.assertTrue(len(changed_location) > 0)
 
     def test_delete_location(self):
