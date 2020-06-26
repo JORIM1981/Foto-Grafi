@@ -42,8 +42,8 @@ class Image(models.Model):
     description = models.TextField()
     author = models.CharField(max_length=40, default='admin')
     date = models.DateTimeField(auto_now_add=True)
-    category = models.ForeignKey(Category)
-    location = models.ForeignKey(Location)
+    category = models.ForeignKey(Category,on_delete=models.DO_NOTHING,)
+    location = models.ForeignKey(Location,on_delete=models.DO_NOTHING,)
 
     @classmethod
     def filter_by_location(cls, location):
