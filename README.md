@@ -8,13 +8,7 @@
 ## Description
 This is a Django application for a personal photos gallery that allows a user to upload images for others to see and be able to to share by copying the image link.
 
-You can view the site at:[Heroku]()
-
-
-## Screenshot
-![Personal-dev-Blog]()
-
-![Personal-dev-Blog]()
+You can view the site at:[Heroku](https://foto-grafi.herokuapp.com/)
 
 
 ## User Stories
